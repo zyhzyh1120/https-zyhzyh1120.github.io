@@ -66,8 +66,9 @@ menu: #you can customize, i18n files are in the theme's languages folder. fa-reg
     icon: fa-regular fa-user
     submenus:
       Me: /about
-      Github: https://github.com/EvanNotFound/hexo-theme-redefine
-      Blog: https://ohevan.com
+      Github: https://github.com/zyhzyh1120
+      Gitee: https://gitee.com/web_dev_zyh
+      Blog: https://zyhzyh1120.github.io
       Friends: /friends
   # Links: 
   #   icon: fa-regular fa-link
