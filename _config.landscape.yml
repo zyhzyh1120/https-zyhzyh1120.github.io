@@ -1,9 +1,0 @@
-# ---------------------------------------------------------------------------------------
-#  Your basic info
-# ---------------------------------------------------------------------------------------
-base_info:
-  title: zhuyuehua # Site title
-  author: zyh # Author name
-  url: https://zyhzyh1120.github.io # Site url
-  # Logo image (You can use local image, image external link or don’t fill)
-  logo_img: # logo image on the left of the navigation bar
