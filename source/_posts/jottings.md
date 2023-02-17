@@ -1,13 +1,34 @@
 ---
-title: jottings
+title: tabs演示
 date: 2022-11-20 17:37:32
-tags:
+tags: Demo
+categories: Demo
 ---
 
-```js
-// 注释
-```
+{% tabs First unique name %}
 
-```html
-<h2>我是h2标签</h2>
-```
+<!-- tab First Tab-->
+
+**This is Tab 1.**
+
+<!-- endtab -->
+
+<!-- tab Second Tab-->
+
+**This is Tab 2.**
+
+This is Tab 2.
+
+<!-- endtab -->
+
+<!-- tab Third Tab-->
+
+**This is Tab 3.**
+
+This is Tab 3.
+
+This is Tab 3.
+
+<!-- endtab -->
+
+{% endtabs %}

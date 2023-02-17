@@ -2,7 +2,7 @@
 #  Your basic info
 # ---------------------------------------------------------------------------------------
 base_info:
-  title: zhuyuehua # Site title
+  title: 圆鼓鼓的朱 # Site title
   author: 圆鼓鼓的朱 # Author name
   description: '5年前端开发经验，独立开发过B2B商户平台，公众号小程序，进击全栈中！'
   url: https://zyhzyh1120.github.io # Site url
@@ -56,8 +56,8 @@ menu: #you can customize, i18n files are in the theme's languages folder. fa-reg
   Home: 
     path: / 
     icon: fa-regular fa-house # can be empty
-  Archives: 
-    path: /archives 
+  Categories: 
+    path: /categories
     icon: fa-regular fa-archive # can be empty
   # Status: 
   #   path: https://status.evanluo.top/
@@ -65,10 +65,9 @@ menu: #you can customize, i18n files are in the theme's languages folder. fa-reg
   About: 
     icon: fa-regular fa-user
     submenus:
-      Me: /about
-      Github: https://github.com/zyhzyh1120
-      Gitee: https://gitee.com/web_dev_zyh
       Blog: https://zyhzyh1120.github.io
+      Gitee: https://gitee.com/web_dev_zyh
+      Github: https://github.com/zyhzyh1120
       Friends: /friends
   # Links: 
   #   icon: fa-regular fa-link
