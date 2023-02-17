@@ -3,8 +3,7 @@
   <entry>
     <title>前端工程化</title>
     <url>/2022/11/25/front-engineering/</url>
-    <content><![CDATA[<p><strong>一、html</strong></p>
-<p><strong>1、基本规范</strong></p>
+    <content><![CDATA[<h2 id="基本规范"><a href="#基本规范" class="headerlink" title="基本规范"></a>基本规范</h2><p><strong>一、html</strong></p>
 <p>1.1 使用 <!Doctype html> 文档类型声明，h5 的最新声明方式</p>
 <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
@@ -59,9 +58,59 @@
 
 <p><strong>5</strong>、函数&#x2F;方法 注释必须包含函数说明，有参数和返回值时必须使用注释标注，参考下面样例。参考 jsdoc</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">正例：</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 函数描述 *</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; p1 参数1的说明</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; p2 参数2的说明，比较长</span></span><br><span class="line"><span class="comment">*     那就换行了.</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> &#123;<span class="type">number=</span>&#125; p3 参数3的说明（可选）</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> &#123;<span class="type">Object</span>&#125; 返回值描述</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">p1, p2, p3</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> p3 = p3 || <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">p1</span>: p1,</span><br><span class="line">        <span class="attr">p2</span>: p2,</span><br><span class="line">        <span class="attr">p3</span>: p3</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h3 id="全局方法、事件，组件，js"><a href="#全局方法、事件，组件，js" class="headerlink" title="全局方法、事件，组件，js"></a>全局方法、事件，组件，js</h3><p>1、禁止业务逻辑的 mixins 进行全局注册<br>2、使用 addEventListener 注册事件，注意需要销毁，防止内存泄漏等。<br>3、若不需要双向绑定数据，尽量把变量定义为 data 函数的内部变量，不用添加在 return 对象里。<br>4、全局组件的 name 统一前缀加’p’,参考 src&#x2F;components&#x2F;remote-select&#x2F;index.vue 组件的 name 命名方式</p>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>1、vue 文件尽量使用 scoped 限制作用范围</p>
+<h3 id="权限方面"><a href="#权限方面" class="headerlink" title="权限方面"></a>权限方面</h3><p>按钮权限命名要求： 模块名:请求 api 路径 例如 sku:&#x2F;wawa-open-common-server&#x2F;upload&#x2F;image<br>菜单创建要求：每创建一个菜单需要创建一个对应的查看按钮权限</p>
+<h3 id="文件目录结构"><a href="#文件目录结构" class="headerlink" title="文件目录结构"></a>文件目录结构</h3><p>项目文件结构一般都大同小异，可以参考 scm 项目的文件说明</p>
+<ul>
+<li>api: 存放整个项目的请求 api</li>
+<li>assets: 存放项目静态资源</li>
+<li>common: 公共 js 功能，一般挂载在 vue.prototype 上</li>
+<li>components: 公共组件，包括框架基础界面布局，基于业务的通用组件</li>
+<li>config: 配置文件，配置全局请求的域名,项目公共的数据，配置全局表格的方法</li>
+<li>constants: 存放整个项目的不同模块所需的枚举值，供.&#x2F;filter 过滤器使用</li>
+<li>filter: 存放过滤器函数</li>
+<li>mixin: 存放混合函数，一般不全局混合注册，按需注册</li>
+<li>router: 全局路由，定义项目所有的路由，在登录的时候根据接口返回，按需注册路由，进行菜单权限控制</li>
+<li>store: 存放 vuex 一些函数，目前保存菜单路由，全局表格 vxe-table 的高度计算函数</li>
+<li>until: 一些工具函数,按需导入使用</li>
+<li>views: 业务页面</li>
+<li>.gitlab-cli.yml: gitlab 自动部署配置的文件，一般只需要更改 scripts 与 tags 里的内容</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>工程化</category>
+      </categories>
       <tags>
         <tag>工程化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2022/11/21/git/</url>
+    <content><![CDATA[<h2 id="Git-常用命令速查"><a href="#Git-常用命令速查" class="headerlink" title="Git 常用命令速查"></a>Git 常用命令速查</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -r  // 查看远程所有分支</span><br><span class="line"></span><br><span class="line">git revert [commit_id]   // 撤销某次操作，此次操作之前和之后的 commit 和 <span class="built_in">history</span> 都会保留</span><br><span class="line">git revert HEAD          //撤销倒数第一次提交</span><br><span class="line">git revert HEAD^         //撤销倒数第二次提交</span><br><span class="line">git revert HEAD~2        //撤销倒数第三次提交</span><br><span class="line"></span><br><span class="line">// 创建本地分支并关联</span><br><span class="line">git checkout -b 本地分支 origin/远程分支</span><br><span class="line">git branch --set-upstream-to origin/远程分支名 本地分支名      //已有本地分支创建关联</span><br><span class="line">git pull // 拉取</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 验证github秘钥</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">git revert ：撤销某次操作</span><br><span class="line">git reset &lt;<span class="built_in">hash</span>&gt;：是撤销某次提交，但是此次之后的修改都会被退回到暂存区。除了默认的 mixed 模式，还有 soft 和 hard 模式。</span><br><span class="line">git reset --soft ：回退到某个版本，只回退了 commit 的信息，不会恢复到 index file 一级。如果还要提交，直接 commit 即可；</span><br><span class="line">git reset --hard ： 彻底回退到某个版本，本地的源码也会变为上一个版本的内容，撤销的 commit 中所包含的更改被冲掉；</span><br><span class="line"></span><br><span class="line">1. 当代码已经 commit 但没有 push 时，可使用如下命令操作：</span><br><span class="line">   git revert HEAD //撤销倒数第一次提交</span><br><span class="line">   git revert HEAD^ //撤销倒数第二次提交</span><br><span class="line">   git revert HEAD~2 //撤销倒数第三次提交</span><br><span class="line"></span><br><span class="line">   git revert [commit_id] // 比如：fa042ce57ebbe5bb9c8db709f719cec2c58ee7ff）撤销指定的版本，撤销也会作为一次提交进</span><br><span class="line"></span><br><span class="line">2. 当代码已经 commit 并 push 时，可使用如下命令：</span><br><span class="line">   git revert HEAD~1 //代码回退到前一个版本</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意: 当回退有冲突时，需手动合并冲突并进行修改，再 commit 和 push。</span></span><br><span class="line"><span class="comment"># 这相当于增加了一次新的提交并且版本库中有记录。</span></span><br><span class="line">  git reset --soft 和 git reset --hard</span><br><span class="line">  git reset –-soft</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>回退到某个版本，只回退了 commit 的信息，不会恢复到 index file 一级；如果还要提交，直接 commit 即可；<ul>
+<li>如果是为了版本回退，本地低于线上版本则需要加 –force</li>
+<li>git push origin 分支 –force &#x2F;&#x2F; ok，大功告成</li>
+</ul>
+</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">git reset -–hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容，撤销的 commit 中所包含的更改被冲掉，接着推送就可以了；</span><br><span class="line">// 参数 --soft 指的是：保留当前工作区，以便重新 commit。</span><br><span class="line">// 参数 --hard 指的是：不保留工作区，丢弃代码</span><br><span class="line">// 然后 git reset HEAD 就回退成功了</span><br><span class="line"></span><br><span class="line">// 如果是为了版本回退，本地低于线上版本则需要加 --force</span><br><span class="line">git push origin 分支 --force // ok，大功告成</span><br><span class="line"></span><br><span class="line">// 删除指定的 commits，需要执行变基操作，在多人协作的项目中，不推荐对已推送到远程仓库的内容进行变基操作</span><br><span class="line">交互式的变基简介</span><br><span class="line">在 rebase 命令中加入 -i 或 --interactive 参数，在交互模式下完成</span><br><span class="line">交互模式会将指定的 commit 后的所有提交列出，行格式：(action) (partial-sha) (short commit message)</span><br><span class="line">你可以上下移动这些行从而对提交进行重排序。当你退出编辑器时，git 会按照你指定的顺序去应用提交，并且做出相应的操作（action）。</span><br><span class="line">操作(action)说明</span><br><span class="line">edit：使用 commit，但是暂停以便进行修正</span><br><span class="line">squash：使用 commit，但是把它与前一次 commit 合并</span><br><span class="line">pick：使用 commit</span><br><span class="line">drop：移除 commit</span><br><span class="line">git rebase -i origin/master 会将最后一次从 origin 仓库拉取或者向 origin 推送之后的所有提交列出。</span><br><span class="line"></span><br><span class="line">1. 首先使用 git <span class="built_in">log</span> 命令找到需要删除的 commit 版本的前一次 commit 的 commit_id</span><br><span class="line">2. 进入交互模式，进入后不会列出当前版本</span><br><span class="line">3. git rebase -i [commit_id]</span><br><span class="line">4. 进入编辑模式，将第一行（即你需要删除的 commit）前的操作符修改为 drop</span><br><span class="line">5. 修改完成后，退出编辑模式然后保存 :wq</span><br><span class="line"></span><br><span class="line"><span class="comment">## git 提交日志规范</span></span><br><span class="line">- feat：新功能（feature）</span><br><span class="line">- fix：修补 bug</span><br><span class="line">- docs：文档（documentation）</span><br><span class="line">- style： 不影响代码运行的变动（css，空格，格式，缺少分号等）</span><br><span class="line">- refactor：重构（即不是新增功能，也不是修改 bug 的代码变动）</span><br><span class="line">- <span class="built_in">test</span>：增加测试</span><br><span class="line">- chore：构建过程或辅助工具的变动，对构建过程或辅助工具和库（如文档生成）的更改</span><br><span class="line">- build： 源码构建配置文件的变动</span><br><span class="line">- <span class="built_in">test</span>： 添加缺失或更正现有测试 ，单元（集成）测试的源码提交</span><br><span class="line">- revert: 代码还原的变动</span><br><span class="line">- ci: 持续集成工具的变动</span><br><span class="line">- perf: 代码更改可提高性能，软件性能分析工具的变动</span><br><span class="line">- [^可单个或多个标识组合使用：]: 例：fix+style(_): 修改了去除定位偏移的 bug+背景样式修改</span><br><span class="line">scope</span><br><span class="line">用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同，逗号分隔。</span><br><span class="line">说明哪个模块受到影响，子模块斜杠分割，多个模块逗号分隔。</span><br><span class="line">例：feat(品牌大全/列表页，新机大全/详情页，某个模块名)：添加 xxx</span><br><span class="line">例：feat(.eslintrc.js,某个单文件文件名)：更新 xx 配置</span><br><span class="line">当更改影响多个范围时，您可以使用_。</span><br><span class="line">例：feat(\*): 更新远端 dev 仓库代码</span><br><span class="line">subject</span><br><span class="line">是 commit 目的的简短描述，不超过 50 个字符。</span><br><span class="line">开头请使用： 添加 xxx 移出(清空)xxx 升级(更新)xxx 覆盖 xxx 改变 xxx 切换 xxx 为 xxx 修复 xxx</span><br><span class="line">以动词开头，使用第一人称现在时，比如 change，而不是 changed 或 changes</span><br><span class="line">第一个字母小写</span><br><span class="line">结尾不加句号（.）</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="分支说明："><a href="#分支说明：" class="headerlink" title="分支说明："></a>分支说明：</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">dev：开发分支，为未通过测试最新代码源</span><br><span class="line">pre: 预发布环境, 为部署生产最后调整</span><br><span class="line">master：生产环境，为部署线上正式环境代码源</span><br><span class="line">合并代码过程中，有冲突需先解决冲突部分代码。</span><br><span class="line">合并代码完成，检查两个文件与分支说明是否对应：</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h4><p>1.安装 node.js<br>2.npm install<br>3.npm run serve<br>手动构建(打包)流程<br>开发环境 npm run dev 测试环境 npm run test 开发环境 npm run prod 以上所有构建流程之前先配置好(.gitlab-ci.yml)打包环境</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -100,6 +149,52 @@
       </categories>
       <tags>
         <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>npm相关</title>
+    <url>/2022/11/21/npm/</url>
+    <content><![CDATA[<h1 id="npm、nvm、nrm-配置相关"><a href="#npm、nvm、nrm-配置相关" class="headerlink" title="npm、nvm、nrm 配置相关"></a>npm、nvm、nrm 配置相关</h1><h2 id="CNPM"><a href="#CNPM" class="headerlink" title="CNPM"></a>CNPM</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="NVM"><a href="#NVM" class="headerlink" title="NVM"></a>NVM</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">nvm version   // 当前版本</span><br><span class="line">nvm li    // 列出本地node实例</span><br><span class="line">nvm list available    // 查看可下载node版本列表</span><br><span class="line"></span><br><span class="line">nvm install 4.2.2     // 安装</span><br><span class="line">nvm install 4.2       // nvm 会寻找 4.2.x 中最高的版本来安装</span><br><span class="line">nvm install latest    // 下载最新的稳定版node</span><br><span class="line">nvm uninstall 4.2.0   // 卸载node</span><br><span class="line"></span><br><span class="line">nvm current		// 查看当前版本</span><br><span class="line">nvm proxy			// 设置代理</span><br><span class="line"></span><br><span class="line">nvm use 4.2.2 		// 切换不同版本</span><br><span class="line">nvm use node		// 切换到本地最新</span><br><span class="line">nvm run 4.2.2 --version	// 运行指定的node</span><br><span class="line"></span><br><span class="line">nvm <span class="built_in">which</span> 4.2.2		// 确定指定版本路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意： 以下为必操作</span></span><br><span class="line">// 在setting 文件加， 避免node跟npm版本问题、node不带npm问题</span><br><span class="line">node_mirror: https://npm.taobao.org/mirrors/node/</span><br><span class="line">npm_mirror: https://npm.taobao.org/mirrors/npm/</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="npm-配置相关"><a href="#npm-配置相关" class="headerlink" title="npm 配置相关"></a>npm 配置相关</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 镜像源链接切换，查看镜像源使用状态</span></span><br><span class="line">npm get registry</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 设置镜像源</span></span><br><span class="line">npm get registry</span><br><span class="line">npm config <span class="built_in">set</span> registry &lt;url&gt;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装私有包</span></span><br><span class="line"><span class="comment"># 普通的</span></span><br><span class="line"><span class="comment"># 先安装私有 npm 包：npm install &lt;name&gt; --registry=&lt;url&gt;</span></span><br><span class="line"><span class="comment"># 然后安装公共 npm 包</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">  npm --registry https://registry.npm.taobao.org install &lt;name&gt;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 需要先注册的(例子)</span></span><br><span class="line">npm <span class="built_in">set</span> registry http://47.101.202.23:4873/ // 设置</span><br><span class="line">npm adduser --registry http://47.101.202.23:4873/ // 注册</span><br><span class="line">npm login &lt;username&gt; //登录</span><br><span class="line">npm profile <span class="built_in">set</span> password --registry http://47.101.202.23:4873/</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装临时包</span></span><br><span class="line">npm install express --no-save // 安装临时包, 此次安装不会记录在 package.json</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">使用: nrm &lt;name&gt;</span><br><span class="line">下载: nrm：npm install -g nrm</span><br><span class="line">查看可切换的镜像源： nrm <span class="built_in">ls</span></span><br><span class="line">切换淘宝镜像源：nrm use taobao</span><br><span class="line">// (_表示正在使用的镜像源)</span><br><span class="line">_ npm -------- https://registry.npmjs.org/</span><br><span class="line">yarn ------- https://registry.yarnpkg.com/</span><br><span class="line">cnpm ------- http://r.cnpmjs.org/</span><br><span class="line">taobao ----- https://registry.npm.taobao.org/</span><br><span class="line">nj --------- https://registry.nodejitsu.com/</span><br><span class="line">npmMirror -- https://skimdb.npmjs.com/registry/</span><br><span class="line">edunpm ----- http://registry.enpmjs.org/</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="nrm-中主要的命令提示："><a href="#nrm-中主要的命令提示：" class="headerlink" title="nrm 中主要的命令提示："></a>nrm 中主要的命令提示：</h3><ul>
+<li>nrm -V：查看当前 nvm 版本； (即：是 ‘nrm -Version’ 简写)；</li>
+<li>nrm -h：显示所有命令； (即：是 ‘nrm -help’ 简写)；</li>
+<li>nrm current：显示当前源名称;</li>
+<li>nrm use <registry>：切 ‘npm’ 换源;</li>
+<li>nrm add <registry> <url> [home]：添加一个源; (比如：公司自己的私有源)；</li>
+<li>nrm set-auth <registry> <value> [always]：设置自定义源的授权信息；</li>
+<li>nrm set-email <registry> <value>：给自定义源设置路径；</li>
+<li>nrm set-hosted-repo <registry> <value>：设置发布到自定义源的 ‘npm’ 托管仓储</li>
+<li>nrm del <registry>：删除自定义源;</li>
+<li>nrm home <registry> [browser]：浏览器中打开源首页；</li>
+<li>nrm publish [options] [<tarball>|<folder>]：发布包到自定义源，如果没有使用自定义源，则直接发布到 npm；</li>
+<li>nrm test [registry]：测试源的访问速度； 不加 ‘registry’ 时，默认测试所有的源速度；</li>
+</ul>
+<h3 id="定制源"><a href="#定制源" class="headerlink" title="定制源"></a>定制源</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定制的源()</span></span><br><span class="line"><span class="comment"># 特别适用于添加企业内部的私有源，执行命令 nrm add &lt;registry&gt; &lt;url&gt;，其中 reigstry 为源名，url 为源的路径</span></span><br><span class="line">添加: nrm add &lt;registry&gt; http://192.168.0.127:8527/repository/npm-public/</span><br><span class="line">移除: nrm del &lt;registry&gt;</span><br><span class="line">测试延迟: nrm <span class="built_in">test</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#设置代理</span></span><br><span class="line">git 设置 <span class="comment">#直接代理</span></span><br><span class="line">git config --global http.proxy http://127.0.0.1:80</span><br><span class="line">git config --global https.proxy https://127.0.0.1:80</span><br><span class="line"></span><br><span class="line"><span class="comment">#授权代理</span></span><br><span class="line">git config --global http.proxy http://username:password@127.0.0.1:80</span><br><span class="line">git config --global https.proxy https://username:password@127.0.0.1:80</span><br><span class="line"></span><br><span class="line"><span class="comment">#取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line">npm 设置 <span class="comment">#直接代理</span></span><br><span class="line">npm config <span class="built_in">set</span> proxy http://127.0.0.1:80</span><br><span class="line">npm config <span class="built_in">set</span> https-proxy https://127.0.0.1:80 <span class="comment">#授权代理</span></span><br><span class="line">npm config <span class="built_in">set</span> proxy http://username:password@127.0.0.1:80</span><br><span class="line">npm config <span class="built_in">set</span> https-proxy https://username:password@127.0.0.1:80</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="souceTree-使用问题"><a href="#souceTree-使用问题" class="headerlink" title="souceTree 使用问题"></a>souceTree 使用问题</h2><h3 id="拉取、提交提示权限问题"><a href="#拉取、提交提示权限问题" class="headerlink" title="拉取、提交提示权限问题"></a>拉取、提交提示权限问题</h3><div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="code"><pre><span class="line">选项 &gt; 一般 &gt; SSH客户端配置 &gt; 把秘钥配置好</span><br></pre></td></tr></table></figure></div>
+]]></content>
+      <categories>
+        <category>NPM</category>
+      </categories>
+      <tags>
+        <tag>NPN</tag>
       </tags>
   </entry>
   <entry>

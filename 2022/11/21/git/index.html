@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://zyhzyh1120.github.io/2022/11/25/front-engineering/"/>
+    <link rel="canonical" href="https://zyhzyh1120.github.io/2022/11/21/git/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="前端工程化">
+    <meta property="og:title" content="Git">
     <meta property="og:description" content="5年前端开发经验，独立开发B2B商户平台，公众号小程序，进击全栈中！">
-    <meta property="og:url" content="https://zyhzyh1120.github.io2022/11/25/front-engineering/">
+    <meta property="og:url" content="https://zyhzyh1120.github.io2022/11/21/git/">
     <meta property="og:image" content="/images/redefine-logo.svg">
     <meta property="og:site_name" content="圆鼓鼓的朱">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="前端工程化">
+    <meta name="twitter:title" content="Git">
     <meta name="twitter:description" content="5年前端开发经验，独立开发B2B商户平台，公众号小程序，进击全栈中！">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            前端工程化 -
+            Git -
         
         圆鼓鼓的朱
     </title>
@@ -283,7 +283,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">前端工程化</h1>
+                    <h1 class="article-title-regular">Git</h1>
                 </div>
             
                 
@@ -305,8 +305,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2022-11-25 13:36:45</span>
-        <span class="mobile">2022-11-25 13:36</span>
+        <span class="pc">2022-11-21 19:01:27</span>
+        <span class="mobile">2022-11-21 19:01</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -314,7 +314,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>&nbsp;
+                        <a href="/categories/Git/">Git</a>&nbsp;
                     </li>
                 
             </ul>
@@ -326,7 +326,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>&nbsp;
+                        <a href="/tags/Git/">Git</a>&nbsp;
                     </li>
                 
             </ul>
@@ -349,81 +349,22 @@
             
 
             <div class="article-content markdown-body">
-                <h2 id="基本规范"><a href="#基本规范" class="headerlink" title="基本规范"></a>基本规范</h2><p><strong>一、html</strong></p>
-<p>1.1 使用 <!Doctype html> 文档类型声明，h5 的最新声明方式</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+                <h2 id="Git-常用命令速查"><a href="#Git-常用命令速查" class="headerlink" title="Git 常用命令速查"></a>Git 常用命令速查</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">git branch -r  // 查看远程所有分支</span><br><span class="line"></span><br><span class="line">git revert [commit_id]   // 撤销某次操作，此次操作之前和之后的 commit 和 <span class="built_in">history</span> 都会保留</span><br><span class="line">git revert HEAD          //撤销倒数第一次提交</span><br><span class="line">git revert HEAD^         //撤销倒数第二次提交</span><br><span class="line">git revert HEAD~2        //撤销倒数第三次提交</span><br><span class="line"></span><br><span class="line">// 创建本地分支并关联</span><br><span class="line">git checkout -b 本地分支 origin/远程分支</span><br><span class="line">git branch --set-upstream-to origin/远程分支名 本地分支名      //已有本地分支创建关联</span><br><span class="line">git pull // 拉取</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 验证github秘钥</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></div>
 
-<p>1.2 设置网页的编码以及文档类型</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">git revert ：撤销某次操作</span><br><span class="line">git reset &lt;<span class="built_in">hash</span>&gt;：是撤销某次提交，但是此次之后的修改都会被退回到暂存区。除了默认的 mixed 模式，还有 soft 和 hard 模式。</span><br><span class="line">git reset --soft ：回退到某个版本，只回退了 commit 的信息，不会恢复到 index file 一级。如果还要提交，直接 commit 即可；</span><br><span class="line">git reset --hard ： 彻底回退到某个版本，本地的源码也会变为上一个版本的内容，撤销的 commit 中所包含的更改被冲掉；</span><br><span class="line"></span><br><span class="line">1. 当代码已经 commit 但没有 push 时，可使用如下命令操作：</span><br><span class="line">   git revert HEAD //撤销倒数第一次提交</span><br><span class="line">   git revert HEAD^ //撤销倒数第二次提交</span><br><span class="line">   git revert HEAD~2 //撤销倒数第三次提交</span><br><span class="line"></span><br><span class="line">   git revert [commit_id] // 比如：fa042ce57ebbe5bb9c8db709f719cec2c58ee7ff）撤销指定的版本，撤销也会作为一次提交进</span><br><span class="line"></span><br><span class="line">2. 当代码已经 commit 并 push 时，可使用如下命令：</span><br><span class="line">   git revert HEAD~1 //代码回退到前一个版本</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意: 当回退有冲突时，需手动合并冲突并进行修改，再 commit 和 push。</span></span><br><span class="line"><span class="comment"># 这相当于增加了一次新的提交并且版本库中有记录。</span></span><br><span class="line">  git reset --soft 和 git reset --hard</span><br><span class="line">  git reset –-soft</span><br></pre></td></tr></table></figure></div>
 
-<p>1.3 设置网页的渲染模式，按照最新的模式渲染</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge,chrome=1&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>2</strong>、CSS 和 JavaScript 引入 * *</p>
-<p>2.1 引入 CSS 时必须指明 rel&#x3D;”stylesheet”</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;page.css&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>2.2 JavaScript 应当放在页面末尾，或采用异步加载。</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- a lot of elements --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;’init-behavior.js’&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>二、CSS</strong></p>
-<p><strong>1、书写</strong></p>
-<p>1.1 禁止使用层级过深的选择器，允许最多三级</p>
-<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> <span class="selector-class">.box</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>1.2 属性书写顺序遵循以下规则</p>
-<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* 位置属性 */</span></span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="comment">/* 盒模型 */</span></span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1000px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* 文本属性 */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  / * 背景属性  */</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">  / * 其他  */</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>2、命名</strong><br>选择器命名必须使用小写，单词间使用-分隔，命名语义化</p>
-<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 应用列表 */</span></span><br><span class="line"><span class="selector-class">.application-manage-list</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1000px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>三、JS</strong></p>
-<p><strong>1</strong>、变量</p>
-<p>命名方式：<a href="">小驼峰</a></p>
-<p>命名规范：<a href="">前缀名词</a></p>
-<p>命名建议：语义化</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 友好</span></span><br><span class="line"><span class="keyword">let</span> maxCount = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> tableTitle = <span class="string">&quot;LoginTable&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不友好</span></span><br><span class="line"><span class="keyword">let</span> setCount = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> getTitle = <span class="string">&quot;LoginTable&quot;</span>;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>2</strong>、常量</p>
-<p>命名方式：<a href="">全部大写</a></p>
-<p>命名规范：<a href="">使用大写字母和下划线来组合命名，下划线用以分割单词</a></p>
-<p>命名建议：语义化</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">MAX_COUNT</span> = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">URL</span> = <span class="string">&quot;http://www.foreverz.com&quot;</span>;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>3</strong>、函数</p>
-<p>命名方式：<a href="">小驼峰式命名法</a>。</p>
-<p>命名规范：<a href="">前缀应当为动词</a>。</p>
-<p>命名建议：语义化</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否可阅读</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">canRead</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取名称</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getName</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">name</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>4、构造函数</strong></p>
-<p>命名方式：大驼峰式命名法，首字母大写</p>
-<p>命名规范：前缀为名称。</p>
-<p>命名建议：语义化</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例子:</span></span><br><span class="line"><span class="keyword">const</span> getPromise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">resolve</span>();</span><br><span class="line">  <span class="comment">// 或 reject()</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>5</strong>、函数&#x2F;方法 注释必须包含函数说明，有参数和返回值时必须使用注释标注，参考下面样例。参考 jsdoc</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">正例：</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 函数描述 *</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; p1 参数1的说明</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; p2 参数2的说明，比较长</span></span><br><span class="line"><span class="comment">*     那就换行了.</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> &#123;<span class="type">number=</span>&#125; p3 参数3的说明（可选）</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> &#123;<span class="type">Object</span>&#125; 返回值描述</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">p1, p2, p3</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> p3 = p3 || <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">p1</span>: p1,</span><br><span class="line">        <span class="attr">p2</span>: p2,</span><br><span class="line">        <span class="attr">p3</span>: p3</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h3 id="全局方法、事件，组件，js"><a href="#全局方法、事件，组件，js" class="headerlink" title="全局方法、事件，组件，js"></a>全局方法、事件，组件，js</h3><p>1、禁止业务逻辑的 mixins 进行全局注册<br>2、使用 addEventListener 注册事件，注意需要销毁，防止内存泄漏等。<br>3、若不需要双向绑定数据，尽量把变量定义为 data 函数的内部变量，不用添加在 return 对象里。<br>4、全局组件的 name 统一前缀加’p’,参考 src&#x2F;components&#x2F;remote-select&#x2F;index.vue 组件的 name 命名方式</p>
-<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>1、vue 文件尽量使用 scoped 限制作用范围</p>
-<h3 id="权限方面"><a href="#权限方面" class="headerlink" title="权限方面"></a>权限方面</h3><p>按钮权限命名要求： 模块名:请求 api 路径 例如 sku:&#x2F;wawa-open-common-server&#x2F;upload&#x2F;image<br>菜单创建要求：每创建一个菜单需要创建一个对应的查看按钮权限</p>
-<h3 id="文件目录结构"><a href="#文件目录结构" class="headerlink" title="文件目录结构"></a>文件目录结构</h3><p>项目文件结构一般都大同小异，可以参考 scm 项目的文件说明</p>
 <ul>
-<li>api: 存放整个项目的请求 api</li>
-<li>assets: 存放项目静态资源</li>
-<li>common: 公共 js 功能，一般挂载在 vue.prototype 上</li>
-<li>components: 公共组件，包括框架基础界面布局，基于业务的通用组件</li>
-<li>config: 配置文件，配置全局请求的域名,项目公共的数据，配置全局表格的方法</li>
-<li>constants: 存放整个项目的不同模块所需的枚举值，供.&#x2F;filter 过滤器使用</li>
-<li>filter: 存放过滤器函数</li>
-<li>mixin: 存放混合函数，一般不全局混合注册，按需注册</li>
-<li>router: 全局路由，定义项目所有的路由，在登录的时候根据接口返回，按需注册路由，进行菜单权限控制</li>
-<li>store: 存放 vuex 一些函数，目前保存菜单路由，全局表格 vxe-table 的高度计算函数</li>
-<li>until: 一些工具函数,按需导入使用</li>
-<li>views: 业务页面</li>
-<li>.gitlab-cli.yml: gitlab 自动部署配置的文件，一般只需要更改 scripts 与 tags 里的内容</li>
+<li>回退到某个版本，只回退了 commit 的信息，不会恢复到 index file 一级；如果还要提交，直接 commit 即可；<ul>
+<li>如果是为了版本回退，本地低于线上版本则需要加 –force</li>
+<li>git push origin 分支 –force &#x2F;&#x2F; ok，大功告成</li>
 </ul>
+</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">git reset -–hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容，撤销的 commit 中所包含的更改被冲掉，接着推送就可以了；</span><br><span class="line">// 参数 --soft 指的是：保留当前工作区，以便重新 commit。</span><br><span class="line">// 参数 --hard 指的是：不保留工作区，丢弃代码</span><br><span class="line">// 然后 git reset HEAD 就回退成功了</span><br><span class="line"></span><br><span class="line">// 如果是为了版本回退，本地低于线上版本则需要加 --force</span><br><span class="line">git push origin 分支 --force // ok，大功告成</span><br><span class="line"></span><br><span class="line">// 删除指定的 commits，需要执行变基操作，在多人协作的项目中，不推荐对已推送到远程仓库的内容进行变基操作</span><br><span class="line">交互式的变基简介</span><br><span class="line">在 rebase 命令中加入 -i 或 --interactive 参数，在交互模式下完成</span><br><span class="line">交互模式会将指定的 commit 后的所有提交列出，行格式：(action) (partial-sha) (short commit message)</span><br><span class="line">你可以上下移动这些行从而对提交进行重排序。当你退出编辑器时，git 会按照你指定的顺序去应用提交，并且做出相应的操作（action）。</span><br><span class="line">操作(action)说明</span><br><span class="line">edit：使用 commit，但是暂停以便进行修正</span><br><span class="line">squash：使用 commit，但是把它与前一次 commit 合并</span><br><span class="line">pick：使用 commit</span><br><span class="line">drop：移除 commit</span><br><span class="line">git rebase -i origin/master 会将最后一次从 origin 仓库拉取或者向 origin 推送之后的所有提交列出。</span><br><span class="line"></span><br><span class="line">1. 首先使用 git <span class="built_in">log</span> 命令找到需要删除的 commit 版本的前一次 commit 的 commit_id</span><br><span class="line">2. 进入交互模式，进入后不会列出当前版本</span><br><span class="line">3. git rebase -i [commit_id]</span><br><span class="line">4. 进入编辑模式，将第一行（即你需要删除的 commit）前的操作符修改为 drop</span><br><span class="line">5. 修改完成后，退出编辑模式然后保存 :wq</span><br><span class="line"></span><br><span class="line"><span class="comment">## git 提交日志规范</span></span><br><span class="line">- feat：新功能（feature）</span><br><span class="line">- fix：修补 bug</span><br><span class="line">- docs：文档（documentation）</span><br><span class="line">- style： 不影响代码运行的变动（css，空格，格式，缺少分号等）</span><br><span class="line">- refactor：重构（即不是新增功能，也不是修改 bug 的代码变动）</span><br><span class="line">- <span class="built_in">test</span>：增加测试</span><br><span class="line">- chore：构建过程或辅助工具的变动，对构建过程或辅助工具和库（如文档生成）的更改</span><br><span class="line">- build： 源码构建配置文件的变动</span><br><span class="line">- <span class="built_in">test</span>： 添加缺失或更正现有测试 ，单元（集成）测试的源码提交</span><br><span class="line">- revert: 代码还原的变动</span><br><span class="line">- ci: 持续集成工具的变动</span><br><span class="line">- perf: 代码更改可提高性能，软件性能分析工具的变动</span><br><span class="line">- [^可单个或多个标识组合使用：]: 例：fix+style(_): 修改了去除定位偏移的 bug+背景样式修改</span><br><span class="line">scope</span><br><span class="line">用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同，逗号分隔。</span><br><span class="line">说明哪个模块受到影响，子模块斜杠分割，多个模块逗号分隔。</span><br><span class="line">例：feat(品牌大全/列表页，新机大全/详情页，某个模块名)：添加 xxx</span><br><span class="line">例：feat(.eslintrc.js,某个单文件文件名)：更新 xx 配置</span><br><span class="line">当更改影响多个范围时，您可以使用_。</span><br><span class="line">例：feat(\*): 更新远端 dev 仓库代码</span><br><span class="line">subject</span><br><span class="line">是 commit 目的的简短描述，不超过 50 个字符。</span><br><span class="line">开头请使用： 添加 xxx 移出(清空)xxx 升级(更新)xxx 覆盖 xxx 改变 xxx 切换 xxx 为 xxx 修复 xxx</span><br><span class="line">以动词开头，使用第一人称现在时，比如 change，而不是 changed 或 changes</span><br><span class="line">第一个字母小写</span><br><span class="line">结尾不加句号（.）</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="分支说明："><a href="#分支说明：" class="headerlink" title="分支说明："></a>分支说明：</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dev：开发分支，为未通过测试最新代码源</span><br><span class="line">pre: 预发布环境, 为部署生产最后调整</span><br><span class="line">master：生产环境，为部署线上正式环境代码源</span><br><span class="line">合并代码过程中，有冲突需先解决冲突部分代码。</span><br><span class="line">合并代码完成，检查两个文件与分支说明是否对应：</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h4><p>1.安装 node.js<br>2.npm install<br>3.npm run serve<br>手动构建(打包)流程<br>开发环境 npm run dev 测试环境 npm run test 开发环境 npm run prod 以上所有构建流程之前先配置好(.gitlab-ci.yml)打包环境</p>
 
             </div>
 
@@ -433,7 +374,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/">#工程化</a>&nbsp;
+                            <a href="/tags/Git/">#Git</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -447,13 +388,13 @@
                         <div class="article-prev">
                             <a class="prev"
                             rel="prev"
-                            href="/2023/02/15/vue/"
+                            href="/2022/11/25/front-engineering/"
                             >
                                 <span class="left arrow-icon flex-center">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">vue</span>
+                                    <span class="post-nav-title-item">前端工程化</span>
                                     <span class="post-nav-item">上一篇</span>
                                 </span>
                             </a>
@@ -463,10 +404,10 @@
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2022/11/21/git/"
+                            href="/2022/11/21/npm/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">Git</span>
+                                    <span class="post-nav-title-item">npm相关</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -487,8 +428,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">前端工程化</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A7%84%E8%8C%83"><span class="nav-text">基本规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue"><span class="nav-text">vue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E6%96%B9%E6%B3%95%E3%80%81%E4%BA%8B%E4%BB%B6%EF%BC%8C%E7%BB%84%E4%BB%B6%EF%BC%8Cjs"><span class="nav-text">全局方法、事件，组件，js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css"><span class="nav-text">css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E6%96%B9%E9%9D%A2"><span class="nav-text">权限方面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text">文件目录结构</span></a></li></ol></li></ol>
+        <div class="page-title">Git</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5"><span class="nav-text">Git 常用命令速查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="nav-text">版本回退</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="nav-text">分支说明：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">本地运行</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
