@@ -94,6 +94,9 @@ include:
 exclude:
 ignore:
 
+# 资源压缩
+all_minifier: false # 下载失败了
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/

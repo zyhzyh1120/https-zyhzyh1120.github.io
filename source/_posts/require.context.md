@@ -3,7 +3,7 @@ title: require.context(自动加载js模块等作用)
 date: 2022-11-21 18:40:20
 tags: require
 categories: require
-excerpt: require.context 是 webpack 中，用来创建自己的（模块）上下文
+excerpt: require.context 是 webpack 中，用来创建自己的（模块）上下文。
 ---
 
 # require.context
