@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://zyhzyh1120.github.io/2022/11/20/hello-world/"/>
+    <link rel="canonical" href="https://zyhzyh1120.github.io/2021/10/15/enum/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Hello world">
+    <meta property="og:title" content="enum应用">
     <meta property="og:description" content="5年前端开发经验，独立开发B2B商户平台，公众号小程序，进击全栈中！">
-    <meta property="og:url" content="https://zyhzyh1120.github.io2022/11/20/hello-world/">
+    <meta property="og:url" content="https://zyhzyh1120.github.io2021/10/15/enum/">
     <meta property="og:image" content="/images/redefine-logo.svg">
     <meta property="og:site_name" content="圆鼓鼓的朱">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hello world">
+    <meta name="twitter:title" content="enum应用">
     <meta name="twitter:description" content="5年前端开发经验，独立开发B2B商户平台，公众号小程序，进击全栈中！">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            Hello world -
+            enum应用 -
         
         圆鼓鼓的朱
     </title>
@@ -283,7 +283,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">Hello world</h1>
+                    <h1 class="article-title-regular">enum应用</h1>
                 </div>
             
                 
@@ -305,8 +305,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2022-11-20 12:12:12</span>
-        <span class="mobile">2022-11-20 12:12</span>
+        <span class="pc">2021-10-15 19:05:22</span>
+        <span class="mobile">2021-10-15 19:05</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -314,7 +314,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/Demo/">Demo</a>&nbsp;
+                        <a href="/categories/Enum/">Enum</a>&nbsp;
                     </li>
                 
             </ul>
@@ -326,7 +326,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Demo/">Demo</a>&nbsp;
+                        <a href="/tags/enum/">enum</a>&nbsp;
                     </li>
                 
             </ul>
@@ -349,18 +349,16 @@
             
 
             <div class="article-content markdown-body">
-                <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+                <h2 id="方式一（适用于简易过滤器中）"><a href="#方式一（适用于简易过滤器中）" class="headerlink" title="方式一（适用于简易过滤器中）"></a>方式一（适用于简易过滤器中）</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// enum.js**文件</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取枚举值：STATUSMAP.TTT</span></span><br><span class="line"><span class="comment"> * 获取枚举描述：STATUSMAP.getDesc(&#x27;SH&#x27;)</span></span><br><span class="line"><span class="comment"> * 通过枚举值获取描述：STATUSMAP.getDescFromValue(&#x27;TG&#x27;)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">STATUSMAP</span> = <span class="title function_">createEnum</span>(&#123;</span><br><span class="line">  <span class="attr">SH</span>: [<span class="string">&quot;SH&quot;</span>, <span class="string">&quot;审核中&quot;</span>],</span><br><span class="line">  <span class="attr">TG</span>: [<span class="string">&quot;TG&quot;</span>, <span class="string">&quot;审核通过&quot;</span>],</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createEnum</span>(<span class="params">definition</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> valueMap = &#123;&#125;;</span><br><span class="line">  <span class="keyword">const</span> descMap = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">of</span> <span class="title class_">Object</span>.<span class="title function_">keys</span>(definition)) &#123;</span><br><span class="line">    <span class="keyword">const</span> [value, desc] = definition[key];</span><br><span class="line">    valueMap[key] = value;</span><br><span class="line">    descMap[value] = desc;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...valueMap,</span><br><span class="line">    <span class="title function_">getDesc</span>(<span class="params">key</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> (definition[key] &amp;&amp; definition[key][<span class="number">1</span>]) || <span class="string">&quot;无&quot;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">getDescFromValue</span>(<span class="params">value</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> descMap[value] || <span class="string">&quot;无&quot;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="variable constant_">STATUSMAP</span>;</span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+<p><strong>view</strong>文件</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 过滤器中使用 则在filters过滤器中直接使用函数返回值 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">el-row</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-button</span>&gt;</span>枚举测试<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>当前状态：&#123;&#123;STATUS.getDescFromValue(&#x27;SH&#x27;)&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>也可用通过枚举名称获取描述：&#123;&#123;STATUS.getDesc(&#x27;HHH&#x27;)&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+<h2 id="方拾二（过滤器，循环列表）"><a href="#方拾二（过滤器，循环列表）" class="headerlink" title="方拾二（过滤器，循环列表）"></a>方拾二（过滤器，循环列表）</h2><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// order.js文件</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义枚举值 [&#123;value: &#x27;&#x27;, label: &#x27;&#x27;&#125;]</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">order</span>: [</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">&quot;TJ&quot;</span>, <span class="attr">label</span>: <span class="string">&quot;已提交&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">&quot;CZ&quot;</span>, <span class="attr">label</span>: <span class="string">&quot;处理中&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">&quot;CL&quot;</span>, <span class="attr">label</span>: <span class="string">&quot;已处理&quot;</span> &#125;,</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">orderDetail</span>: [</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">&quot;DF&quot;</span>, <span class="attr">label</span>: <span class="string">&quot;待发货&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">&quot;FH&quot;</span>, <span class="attr">label</span>: <span class="string">&quot;已发货&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">&quot;QS&quot;</span>, <span class="attr">label</span>: <span class="string">&quot;已签收&quot;</span> &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// constants.js文件</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 定义枚举工具</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> order <span class="keyword">from</span> <span class="string">&quot;./order/index.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> constants = &#123;</span><br><span class="line">  ...order,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> valueMap = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> nameMap = &#123;&#125;;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(constants).<span class="title function_">forEach</span>(<span class="function">(<span class="params">key</span>) =&gt;</span> &#123;</span><br><span class="line">  valueMap[key] = [];</span><br><span class="line">  nameMap[key] = &#123;&#125;;</span><br><span class="line">  constants[key].<span class="title function_">forEach</span>(<span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    valueMap[key].<span class="title function_">push</span>(event);</span><br><span class="line">    nameMap[key][event.<span class="property">value</span>] = event.<span class="property">label</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; valueMap, nameMap &#125;;</span><br></pre></td></tr></table></figure></div>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* view文件</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>枚举值用于展示<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">el-row</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">el-button</span> <span class="attr">v-for</span>=<span class="string">&quot;(item, index) in valueMap.order&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;index&quot;</span>&gt;</span>&#123;&#123;item.label&#125;&#125;<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span></span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>枚举值过滤器<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">el-row</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">el-button</span>&gt;</span>&#123;&#123;enumValue | filterStatus(&#x27;orderDetail&#x27;)&#125;&#125;<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; valueMap, nameMap &#125; <span class="keyword">from</span> <span class="string">&#x27;@/constants&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">STATUS</span>: <span class="variable constant_">STATUS</span>,</span><br><span class="line">      valueMap,</span><br><span class="line">      <span class="attr">enumValue</span>: <span class="string">&#x27;FH&#x27;</span>, <span class="comment">// 发货</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">filters</span>:&#123;</span><br><span class="line">    <span class="attr">filterStatus</span>: <span class="keyword">function</span>(<span class="params">val, key</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(!val &amp;&amp; val !== <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&#x27;无&#x27;</span>;</span><br><span class="line">      <span class="keyword">return</span> nameMap[key][val];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
             </div>
 
@@ -370,7 +368,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/Demo/">#Demo</a>&nbsp;
+                            <a href="/tags/enum/">#enum</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -384,13 +382,13 @@
                         <div class="article-prev">
                             <a class="prev"
                             rel="prev"
-                            href="/2022/11/20/jottings/"
+                            href="/2022/11/20/hello-world/"
                             >
                                 <span class="left arrow-icon flex-center">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">tabs演示</span>
+                                    <span class="post-nav-title-item">Hello world</span>
                                     <span class="post-nav-item">上一篇</span>
                                 </span>
                             </a>
@@ -400,10 +398,10 @@
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2021/10/15/enum/"
+                            href="/2020/05/19/front-engineering/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">enum应用</span>
+                                    <span class="post-nav-title-item">前端工程化</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -424,8 +422,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">Hello world</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <div class="page-title">enum应用</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8E%E7%AE%80%E6%98%93%E8%BF%87%E6%BB%A4%E5%99%A8%E4%B8%AD%EF%BC%89"><span class="nav-text">方式一（适用于简易过滤器中）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%8B%BE%E4%BA%8C%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%EF%BC%8C%E5%BE%AA%E7%8E%AF%E5%88%97%E8%A1%A8%EF%BC%89"><span class="nav-text">方拾二（过滤器，循环列表）</span></a></li></ol>
 
     </div>
 </div>
