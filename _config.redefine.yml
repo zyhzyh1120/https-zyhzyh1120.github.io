@@ -196,7 +196,7 @@ copyright_info:
 # ---------------------------------------------------------------------------------------
 footer:
   runtime: true # show website running time or not
-  start_time: 2022/11/19 11:45:14 # the starting time of your website, format: yyyy/mm/dd hh:mm:ss
+  start_time: 2018/06/27 11:45:14 # the starting time of your website, format: yyyy/mm/dd hh:mm:ss
   customize: 欢迎互相学习交流，联系见163邮箱 3Q # customize footer message, can be html code
   icp: # ICP record number of your website, Can be null
 
