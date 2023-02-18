@@ -193,7 +193,7 @@ recommended_article: # 文章推荐，需要 npm install nodejieba
 # 版权 post copyright info
 # ---------------------------------------------------------------------------------------
 copyright_info:
-  enable: true
+  enable: false
 
 # ---------------------------------------------------------------------------------------
 # Footer settings
