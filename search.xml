@@ -345,12 +345,12 @@
     <title>微信</title>
     <url>/2020/11/20/wechat/</url>
     <content><![CDATA[<div class="note-large notel-green"><div class="notel-title"><p>登录API</p>
-</div><div class="notel-content"><p><a href="./wechat-login">公众号授权登录代码</a></p>
+</div><div class="notel-content"><p><a href="/views/wechat/wechat-login">公众号授权登录代码</a></p>
  </div></div>
 
 
 <div class="note-large notel-green"><div class="notel-title"><p>媒体API</p>
-</div><div class="notel-content"><p><a href="./wechat-media">微信jssdk录音API例子</a></p>
+</div><div class="notel-content"><p><a href="/views/wechat/wechat-media">微信jssdk录音API例子</a></p>
  </div></div>
 ]]></content>
       <categories>
