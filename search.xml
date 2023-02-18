@@ -204,7 +204,7 @@
   </entry>
   <entry>
     <title>Hello world</title>
-    <url>/2022/11/20/hello-world/</url>
+    <url>/2020/05/10/hello-world/</url>
     <content><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
@@ -339,6 +339,25 @@
       </categories>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信</title>
+    <url>/2020/11/20/wechat/</url>
+    <content><![CDATA[<div class="note-large notel-green"><div class="notel-title"><p>登录API</p>
+</div><div class="notel-content"><p><a href="./wechat-login">公众号授权登录代码</a></p>
+ </div></div>
+
+
+<div class="note-large notel-green"><div class="notel-title"><p>媒体API</p>
+</div><div class="notel-content"><p><a href="./wechat-media">微信jssdk录音API例子</a></p>
+ </div></div>
+]]></content>
+      <categories>
+        <category>wechat</category>
+      </categories>
+      <tags>
+        <tag>WeChat</tag>
       </tags>
   </entry>
 </search>
