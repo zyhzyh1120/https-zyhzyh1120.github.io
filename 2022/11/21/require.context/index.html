@@ -352,18 +352,19 @@
                 <h1 id="require-context"><a href="#require-context" class="headerlink" title="require.context"></a>require.context</h1><h2 id="初识-require-context"><a href="#初识-require-context" class="headerlink" title="初识 require.context"></a>初识 require.context</h2><p><strong>require.context 是 webpack 中，用来创建自己的（模块）上下文</strong></p>
 <p>webpack 会在构建的时候解析代码中的 require.context()</p>
 <p>require.context 函数接收三个参数：</p>
-<ul>
-<li>要搜索的文件夹目录</li>
-<li>是否还应该搜索它的子目录</li>
-<li>以及一个匹配文件的正则表达式</li>
-</ul>
+<blockquote>
+<ol>
+<li>要搜索的文件夹目录。</li>
+<li>是否还应该搜索它的子目录。</li>
+<li>以及一个匹配文件的正则表达式。</li>
+</ol>
+</blockquote>
 <p>&#x2F;&#x2F; 语法</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.<span class="title function_">context</span>(directory, (useSubdirectories = <span class="literal">false</span>), (regExp = <span class="regexp">/^\.\//</span>));</span><br></pre></td></tr></table></figure></div>
 
 <p>&#x2F;&#x2F; 示例</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> testFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&quot;./test&quot;</span>, <span class="literal">false</span>, <span class="regexp">/\.test\.js$/</span>);</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// （创建了）一个包含了 test 文件夹（不包含子目录）下面的、所有文件名以 `.test.js` 结尾的、能被 require 请求到的文件的上下文。</span></span><br><span class="line"><span class="keyword">const</span> testFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&quot;./test&quot;</span>, <span class="literal">false</span>, <span class="regexp">/\.test\.js$/</span>);</span><br></pre></td></tr></table></figure></div>
 
-<p>&#x2F;&#x2F; （创建了）一个包含了 test 文件夹（不包含子目录）下面的、所有文件名以 <code>.test.js</code> 结尾的、能被 require 请求到的文件的上下文。</p>
 <p>通过打印, 可以看出返回的是一个函数，意思就是说，require.context 模块导出（返回）一个（require）函数。<br>这个函数有三个属性：</p>
 <blockquote>
 <ol>
@@ -378,7 +379,7 @@
 <ol>
 <li>router 例子(router 文件夹内模块化创建,亲测可用):</li>
 </ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> manageFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&#x27;.&#x27;</span>, <span class="literal">true</span>, <span class="regexp">/\.js$/</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(manageFiles.<span class="title function_">keys</span>()) <span class="comment">// [&#x27;./a.js&#x27;] 返回一个数组，包含全部文件名</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> configRouters = [];</span><br><span class="line">    manageFiles.<span class="title function_">keys</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">&#x27;./index.js&#x27;</span>) <span class="keyword">return</span> <span class="comment">//    如果是当前文件，则跳过</span></span><br><span class="line">        configRouters = configRouters.<span class="title function_">concat</span>(<span class="title function_">manageFiles</span>(key).<span class="property">default</span>) <span class="comment">// 读取出文件中的default模块</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">default</span> configRouters <span class="comment">// 抛出一个Vue-router期待的结构的数组</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> manageFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&#x27;.&#x27;</span>, <span class="literal">true</span>, <span class="regexp">/\.js$/</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(manageFiles.<span class="title function_">keys</span>()) <span class="comment">// [&#x27;./a.js&#x27;] 返回一个数组，包含全部文件名</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> configRouters = [];</span><br><span class="line">  manageFiles.<span class="title function_">keys</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (key === <span class="string">&#x27;./index.js&#x27;</span>) <span class="keyword">return</span>    <span class="comment">// 如果是当前文件，则跳过</span></span><br><span class="line">      configRouters = configRouters.<span class="title function_">concat</span>(<span class="title function_">manageFiles</span>(key).<span class="property">default</span>)  <span class="comment">// 读取出文件中的default模块</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> configRouters <span class="comment">// 抛出一个Vue-router期待的结构的数组</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/viewyu12345/article/details/83012970" >https://blog.csdn.net/viewyu12345/article/details/83012970 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 
@@ -404,13 +405,13 @@
                         <div class="article-prev">
                             <a class="prev"
                             rel="prev"
-                            href="/2022/11/21/npm/"
+                            href="/2022/11/21/git/"
                             >
                                 <span class="left arrow-icon flex-center">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">npm相关</span>
+                                    <span class="post-nav-title-item">Git</span>
                                     <span class="post-nav-item">上一篇</span>
                                 </span>
                             </a>
@@ -420,10 +421,10 @@
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2022/11/20/jottings/"
+                            href="/2022/11/21/npm/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">tabs演示</span>
+                                    <span class="post-nav-title-item">npm相关</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">

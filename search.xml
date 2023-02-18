@@ -220,6 +220,50 @@
       </tags>
   </entry>
   <entry>
+    <title>require.context(自动加载js模块等作用)</title>
+    <url>/2022/11/21/require.context/</url>
+    <content><![CDATA[<h1 id="require-context"><a href="#require-context" class="headerlink" title="require.context"></a>require.context</h1><h2 id="初识-require-context"><a href="#初识-require-context" class="headerlink" title="初识 require.context"></a>初识 require.context</h2><p><strong>require.context 是 webpack 中，用来创建自己的（模块）上下文</strong></p>
+<p>webpack 会在构建的时候解析代码中的 require.context()</p>
+<p>require.context 函数接收三个参数：</p>
+<blockquote>
+<ol>
+<li>要搜索的文件夹目录。</li>
+<li>是否还应该搜索它的子目录。</li>
+<li>以及一个匹配文件的正则表达式。</li>
+</ol>
+</blockquote>
+<p>&#x2F;&#x2F; 语法</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>.<span class="title function_">context</span>(directory, (useSubdirectories = <span class="literal">false</span>), (regExp = <span class="regexp">/^\.\//</span>));</span><br></pre></td></tr></table></figure></div>
+
+<p>&#x2F;&#x2F; 示例</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// （创建了）一个包含了 test 文件夹（不包含子目录）下面的、所有文件名以 `.test.js` 结尾的、能被 require 请求到的文件的上下文。</span></span><br><span class="line"><span class="keyword">const</span> testFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&quot;./test&quot;</span>, <span class="literal">false</span>, <span class="regexp">/\.test\.js$/</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>通过打印, 可以看出返回的是一个函数，意思就是说，require.context 模块导出（返回）一个（require）函数。<br>这个函数有三个属性：</p>
+<blockquote>
+<ol>
+<li>resolve：是一个函数，它返回请求被解析后得到的模块 id。</li>
+<li>keys：也是一个函数，它返回一个数组，由所有可能被上下文模块处理的请求组成。</li>
+<li>id：是上下文模块里面所包含的模块 id. 它可能在你使用 module.hot.accept 的时候被用到</li>
+</ol>
+</blockquote>
+<p>调用 testFiles.keys() 可以打印出.&#x2F;test 目录下所有 test 文件集合</p>
+<hr>
+<p><strong>vue 中的应用: router 路由自动化挂载, 全局组件自动化注册, vuex 状态自动化挂载</strong></p>
+<ol>
+<li>router 例子(router 文件夹内模块化创建,亲测可用):</li>
+</ol>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> manageFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&#x27;.&#x27;</span>, <span class="literal">true</span>, <span class="regexp">/\.js$/</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(manageFiles.<span class="title function_">keys</span>()) <span class="comment">// [&#x27;./a.js&#x27;] 返回一个数组，包含全部文件名</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> configRouters = [];</span><br><span class="line">  manageFiles.<span class="title function_">keys</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (key === <span class="string">&#x27;./index.js&#x27;</span>) <span class="keyword">return</span>    <span class="comment">// 如果是当前文件，则跳过</span></span><br><span class="line">      configRouters = configRouters.<span class="title function_">concat</span>(<span class="title function_">manageFiles</span>(key).<span class="property">default</span>)  <span class="comment">// 读取出文件中的default模块</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> configRouters <span class="comment">// 抛出一个Vue-router期待的结构的数组</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><p><a class="link"   href="https://blog.csdn.net/viewyu12345/article/details/83012970" >https://blog.csdn.net/viewyu12345/article/details/83012970 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <categories>
+        <category>require</category>
+      </categories>
+      <tags>
+        <tag>require</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>npm相关</title>
     <url>/2022/11/21/npm/</url>
     <content><![CDATA[<h1 id="npm、nvm、nrm-配置相关"><a href="#npm、nvm、nrm-配置相关" class="headerlink" title="npm、nvm、nrm 配置相关"></a>npm、nvm、nrm 配置相关</h1><h2 id="CNPM"><a href="#CNPM" class="headerlink" title="CNPM"></a>CNPM</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></div>
@@ -263,49 +307,6 @@
       </categories>
       <tags>
         <tag>NPN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>require.context(自动加载js模块等作用)</title>
-    <url>/2022/11/21/require.context/</url>
-    <content><![CDATA[<h1 id="require-context"><a href="#require-context" class="headerlink" title="require.context"></a>require.context</h1><h2 id="初识-require-context"><a href="#初识-require-context" class="headerlink" title="初识 require.context"></a>初识 require.context</h2><p><strong>require.context 是 webpack 中，用来创建自己的（模块）上下文</strong></p>
-<p>webpack 会在构建的时候解析代码中的 require.context()</p>
-<p>require.context 函数接收三个参数：</p>
-<ul>
-<li>要搜索的文件夹目录</li>
-<li>是否还应该搜索它的子目录</li>
-<li>以及一个匹配文件的正则表达式</li>
-</ul>
-<p>&#x2F;&#x2F; 语法</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>.<span class="title function_">context</span>(directory, (useSubdirectories = <span class="literal">false</span>), (regExp = <span class="regexp">/^\.\//</span>));</span><br></pre></td></tr></table></figure></div>
-
-<p>&#x2F;&#x2F; 示例</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> testFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&quot;./test&quot;</span>, <span class="literal">false</span>, <span class="regexp">/\.test\.js$/</span>);</span><br></pre></td></tr></table></figure></div>
-
-<p>&#x2F;&#x2F; （创建了）一个包含了 test 文件夹（不包含子目录）下面的、所有文件名以 <code>.test.js</code> 结尾的、能被 require 请求到的文件的上下文。</p>
-<p>通过打印, 可以看出返回的是一个函数，意思就是说，require.context 模块导出（返回）一个（require）函数。<br>这个函数有三个属性：</p>
-<blockquote>
-<ol>
-<li>resolve：是一个函数，它返回请求被解析后得到的模块 id。</li>
-<li>keys：也是一个函数，它返回一个数组，由所有可能被上下文模块处理的请求组成。</li>
-<li>id：是上下文模块里面所包含的模块 id. 它可能在你使用 module.hot.accept 的时候被用到</li>
-</ol>
-</blockquote>
-<p>调用 testFiles.keys() 可以打印出.&#x2F;test 目录下所有 test 文件集合</p>
-<hr>
-<p><strong>vue 中的应用: router 路由自动化挂载, 全局组件自动化注册, vuex 状态自动化挂载</strong></p>
-<ol>
-<li>router 例子(router 文件夹内模块化创建,亲测可用):</li>
-</ol>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> manageFiles = <span class="built_in">require</span>.<span class="title function_">context</span>(<span class="string">&#x27;.&#x27;</span>, <span class="literal">true</span>, <span class="regexp">/\.js$/</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(manageFiles.<span class="title function_">keys</span>()) <span class="comment">// [&#x27;./a.js&#x27;] 返回一个数组，包含全部文件名</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> configRouters = [];</span><br><span class="line">    manageFiles.<span class="title function_">keys</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">&#x27;./index.js&#x27;</span>) <span class="keyword">return</span> <span class="comment">//    如果是当前文件，则跳过</span></span><br><span class="line">        configRouters = configRouters.<span class="title function_">concat</span>(<span class="title function_">manageFiles</span>(key).<span class="property">default</span>) <span class="comment">// 读取出文件中的default模块</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">default</span> configRouters <span class="comment">// 抛出一个Vue-router期待的结构的数组</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><p><a class="link"   href="https://blog.csdn.net/viewyu12345/article/details/83012970" >https://blog.csdn.net/viewyu12345/article/details/83012970 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-      <categories>
-        <category>require</category>
-      </categories>
-      <tags>
-        <tag>require</tag>
       </tags>
   </entry>
   <entry>
