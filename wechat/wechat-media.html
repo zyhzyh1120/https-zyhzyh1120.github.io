@@ -14,13 +14,13 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="wechat/media">
+    <meta property="og:title" content="微信jssdk录音API例子">
     <meta property="og:description" content="5年前端开发经验，独立开发B2B商户平台，公众号小程序，进击全栈中！">
     <meta property="og:url" content="https://zyhzyh1120.github.iowechat/wechat-media.html">
     <meta property="og:image" content="/images/redefine-logo.svg">
     <meta property="og:site_name" content="圆鼓鼓的朱">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="wechat/media">
+    <meta name="twitter:title" content="微信jssdk录音API例子">
     <meta name="twitter:description" content="5年前端开发经验，独立开发B2B商户平台，公众号小程序，进击全栈中！">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            wechat/media -
+            微信jssdk录音API例子 -
         
         圆鼓鼓的朱
     </title>
@@ -282,7 +282,8 @@
         
         <div class="page-template-content markdown-body">
             
-                <h1>wechat/media</h1>
+                <h1 id="微信-jssdk-录音-API-例子"><a href="#微信-jssdk-录音-API-例子" class="headerlink" title="微信 jssdk 录音 API 例子"></a>微信 jssdk 录音 API 例子</h1><h2 id="首先要引入-jssdk-可以使用-npm-或者-script-引入"><a href="#首先要引入-jssdk-可以使用-npm-或者-script-引入" class="headerlink" title="首先要引入 jssdk, 可以使用 npm 或者 script 引入"></a>首先要引入 jssdk, 可以使用 npm 或者 script 引入</h2><div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 微信授权 , 需要使用的接口</span></span><br><span class="line"><span class="attr">wxConfig</span>: <span class="keyword">function</span> (<span class="params">res, jsapiList</span>) &#123;</span><br><span class="line">  wx.<span class="title function_">config</span>(&#123; <span class="comment">//eslint-disable-line</span></span><br><span class="line">    <span class="attr">debug</span>: <span class="literal">false</span>, <span class="comment">//开启调试模式,调用的所有api的返回值会在客户端alert出来若要查看传入的参数可以在pc端打开参数信息会通过log打出，仅在pc端时才会打印。</span></span><br><span class="line">    <span class="attr">appId</span>: res.<span class="property">data</span>.<span class="property">appid</span>, <span class="comment">// 必填，公众号的唯一标识</span></span><br><span class="line">    <span class="attr">timestamp</span>: res.<span class="property">data</span>.<span class="property">timestamp</span>, <span class="comment">// 必填，生成签名的时间戳</span></span><br><span class="line">    <span class="attr">nonceStr</span>: res.<span class="property">data</span>.<span class="property">noncestr</span>, <span class="comment">// 必填，生成签名的随机串</span></span><br><span class="line">    <span class="attr">signature</span>: res.<span class="property">data</span>.<span class="property">signature</span>,<span class="comment">// 必填，签名</span></span><br><span class="line">    <span class="attr">jsApiList</span>: jsapiList <span class="comment">// 必填，需要使用的JS接口列表</span></span><br><span class="line">  &#125;);</span><br><span class="line">  wx.<span class="title function_">ready</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123; <span class="comment">//eslint-disable-line</span></span><br><span class="line">    wx.<span class="title function_">checkJsApi</span>(&#123; <span class="comment">//eslint-disable-line</span></span><br><span class="line">        <span class="attr">jsApiList</span>: jsapiList,</span><br><span class="line">        <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;checkok&#x27;</span>, res)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.<span class="title function_">error</span>(<span class="keyword">function</span> (<span class="params">res</span>) &#123; <span class="comment">//eslint-disable-line</span></span><br><span class="line">    <span class="comment">// debugger</span></span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;出错了：&quot;</span> + res.<span class="property">errMsg</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// wx录音</span></span><br><span class="line"><span class="attr">audioStart</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  wx.<span class="title function_">startRecord</span>(); <span class="comment">// eslint-disable-line</span></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 点击停止</span></span><br><span class="line"><span class="keyword">async</span> audioStop () &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    wx.<span class="title function_">stopRecord</span>(&#123;  <span class="comment">// eslint-disable-line</span></span><br><span class="line">      <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> audioId = res.<span class="property">localId</span>;</span><br><span class="line">          <span class="title function_">resolve</span>(audioId)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 录制完成, 上传录音</span></span><br><span class="line"><span class="keyword">async</span> audioSuccess (id) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    wx.<span class="title function_">uploadVoice</span>(&#123; <span class="comment">// eslint-disable-line</span></span><br><span class="line">      <span class="attr">localId</span>: id, <span class="comment">// 需要上传的音频的本地ID，由stopRecord接口获得</span></span><br><span class="line">      <span class="attr">isShowProgressTips</span>: <span class="number">1</span>, <span class="comment">// 默认为1，显示进度提示</span></span><br><span class="line">      <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> successId = res.<span class="property">serverId</span>; <span class="comment">// 返回音频的服务器端ID</span></span><br><span class="line">          <span class="title function_">resolve</span>(successId)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
             
         </div>
         <div class="page-template-comments">
@@ -306,7 +307,7 @@
         <div class="copyright-info">
             &copy;
             
-              <span>2022</span>
+              <span>2018</span>
               -
             
             2023&nbsp;&nbsp;<i class="fa-regular fa-computer-classic"></i>&nbsp;&nbsp;<a href="/">圆鼓鼓的朱</a>
@@ -335,7 +336,7 @@
         
         
             <div id="start_time_div" style="display:none">
-                2022/11/19 11:45:14
+                2018/06/27 11:45:14
             </div>
             <div>
                 博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
