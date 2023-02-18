@@ -44,7 +44,7 @@ async audioStop () {
   return new Promise((resolve) => {
     wx.stopRecord({  // eslint-disable-line
       success: function (res) {
-          let audioId = res.localId;
+          const audioId = res.localId;
           resolve(audioId)
       }
     });
@@ -58,7 +58,7 @@ async audioSuccess (id) {
       localId: id, // 需要上传的音频的本地ID，由stopRecord接口获得
       isShowProgressTips: 1, // 默认为1，显示进度提示
       success: function (res) {
-          let successId = res.serverId; // 返回音频的服务器端ID
+          const successId = res.serverId; // 返回音频的服务器端ID
           resolve(successId)
       }
     });
