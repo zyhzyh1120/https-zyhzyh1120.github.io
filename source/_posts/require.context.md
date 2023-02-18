@@ -16,9 +16,9 @@ webpack 会在构建的时候解析代码中的 require.context()
 
 require.context 函数接收三个参数：
 
-- 要搜索的文件夹目录
-- 是否还应该搜索它的子目录
-- 以及一个匹配文件的正则表达式
+> 1.  要搜索的文件夹目录。
+> 2.  是否还应该搜索它的子目录。
+> 3.  以及一个匹配文件的正则表达式。
 
 // 语法
 
@@ -29,10 +29,9 @@ require.context(directory, (useSubdirectories = false), (regExp = /^\.\//));
 // 示例
 
 ```js
+// （创建了）一个包含了 test 文件夹（不包含子目录）下面的、所有文件名以 `.test.js` 结尾的、能被 require 请求到的文件的上下文。
 const testFiles = require.context("./test", false, /\.test\.js$/);
 ```
-
-// （创建了）一个包含了 test 文件夹（不包含子目录）下面的、所有文件名以 `.test.js` 结尾的、能被 require 请求到的文件的上下文。
 
 通过打印, 可以看出返回的是一个函数，意思就是说，require.context 模块导出（返回）一个（require）函数。
 这个函数有三个属性：
@@ -51,15 +50,16 @@ const testFiles = require.context("./test", false, /\.test\.js$/);
 
 ```js
 <script>
-    const manageFiles = require.context('.', true, /\.js$/);
-    console.log(manageFiles.keys()) // ['./a.js'] 返回一个数组，包含全部文件名
+  const manageFiles = require.context('.', true, /\.js$/);
+  console.log(manageFiles.keys()) // ['./a.js'] 返回一个数组，包含全部文件名
 
-    let configRouters = [];
-    manageFiles.keys().forEach(key => {
-        if (key === './index.js') return //    如果是当前文件，则跳过
-        configRouters = configRouters.concat(manageFiles(key).default) // 读取出文件中的default模块
-    })
-    export default configRouters // 抛出一个Vue-router期待的结构的数组
+  let configRouters = [];
+  manageFiles.keys().forEach(key => {
+      if (key === './index.js') return    // 如果是当前文件，则跳过
+      configRouters = configRouters.concat(manageFiles(key).default)  // 读取出文件中的default模块
+  })
+
+  export default configRouters // 抛出一个Vue-router期待的结构的数组
 </script>
 ```
 
