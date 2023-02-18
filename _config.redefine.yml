@@ -22,6 +22,10 @@ style:
   avatar: /images/avatar.png
   primary_color: "#005080"
 
+local_search:
+  enable: true
+  preload: false     # Preload the search data when the page loads
+
 # First screen
 first_screen:
   enable: true
@@ -32,6 +36,7 @@ first_screen:
     light: "#fff"
     dark: "#d1d1b6"
   description: "<h3>Welcome to my website</h3>"
+
 
 # Scroll style settings
 scroll:
